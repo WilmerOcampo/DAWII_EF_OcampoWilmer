@@ -1,0 +1,26 @@
+spring:
+  application:
+    name:
+      spring-client-service
+
+# Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+
+# JWT authentication
+security:
+  jwt:
+    secret-key: fdf06b39b64bead183bcb160098e01c455c2ffab38bc51d5c232d60e1c1f1022
+
+server:
+  port: 8081
+
