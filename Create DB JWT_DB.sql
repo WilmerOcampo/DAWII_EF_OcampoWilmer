@@ -1,0 +1,2 @@
+CREATE SCHEMA `jwt_db` DEFAULT CHARACTER SET utf8mb4 ;
+
