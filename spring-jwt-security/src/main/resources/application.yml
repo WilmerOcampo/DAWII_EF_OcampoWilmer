@@ -13,6 +13,19 @@ spring:
       ddl-auto: update
     show-sql: true
 
+# Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+
 # JWT authentication
 security:
   jwt:

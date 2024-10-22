@@ -20,13 +20,13 @@ public class ProductController {
         this.jwtUtil = jwtUtil;
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     public ResponseEntity<?> hello(@RequestHeader("Authorization") String bearerToken){
         try {
             jwtUtil.isTokenValid(bearerToken);
             return ResponseEntity.ok("Hello, this is MS Product!");
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Unauthorized");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Unauthorized: " + e.getLocalizedMessage());
         }
     }
 
